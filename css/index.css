@@ -2,7 +2,8 @@
 	width: 100%;
 	height: 200px;
 	position: relative;
-	background-image:url(../img/banner.jpg)
+	background-image:url(../img/banner.jpg);
+	background-size: cover;
 }
 .banner img{
 	position: relative;
@@ -17,8 +18,7 @@
 	bottom: 0px;
 }
 .mynav>ul{
-	position: relative;
-	width: 30%;
+	width: 50%;
 	margin-left: 10%;
 	border-bottom: 0px;
 }
@@ -43,28 +43,20 @@
 .searchbox{
 	width: 15%;
 	position: absolute;
-	width: 200px;
 	bottom: 5px;
-	right: -600px;
+	right: 200px;
 }
-<<<<<<< HEAD
-#search{
-	background-color: rgba(255,255,255,0.8);
-}
-
-=======
->>>>>>> parent of 2aa08e3... 1
 #search-img{
 	position: absolute;
-	right: 10px;
+	left: 130px;
 	top: 10px;
 }
-.slidebox{
-	width: 500px;
-	height: 500px;
+#search{
+	background-color: rgba(255,255,255,0.8);
+	width: 150px;
 }
 .baidubtn{
 	position: absolute;
 	top: 0px;
-	left: 102%;
+	left: 160px;
 }
