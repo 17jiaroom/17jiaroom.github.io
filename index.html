@@ -7,6 +7,7 @@
     <title>17Jia</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/slidebox.css">
   </head>
   <body>
     <div class="banner">
@@ -32,11 +33,26 @@
         </div>
     </div>
     <div class="container">
-  
+          <div class="slidebox">  <!-- 整个轮播大框架 -->
+            <ul class="numbox">  <!-- 序列按钮 -->
+              <li class="on">1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+            </ul>
+          <div class="infobox"><p></p></div>
+          <div class="imgbox">  <!-- 图片集合 -->
+              <a href="#"><img src="img/1.jpg" title="第一张图的展示信息" alt="1"></a>
+              <a href="#"><img src="img/2.jpg" title="第二张图的展示信息" alt="2"></a>
+              <a href="#"><img src="img/3.jpg" title="第三张图的展示信息" alt="3"></a>
+              <a href="#"><img src="img/4.jpg" title="第四张图的展示信息" alt="4"></a>
+          </div>
+          </div>
 
     </div>
-   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-   <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-   <script src="js/index.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/slidebox.js"></script>
   </body>
 </html>
