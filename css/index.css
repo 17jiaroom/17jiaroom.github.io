@@ -186,8 +186,8 @@ a:hover{
 }
 .acg{
 	position: absolute;
-	top: 42px;
-	left: 250px;
+	top: 45px;
+	left: 40%;
 	border: 1px solid #ccc;
 	padding:5px;
 }
@@ -196,7 +196,7 @@ a:hover{
 }
 .article h1{
 	position: absolute;
-	left: 350px;
+	left: 60%;
 }
 .article p{
 	position:absolute;
@@ -212,4 +212,7 @@ a:hover{
 }
 .article_about span{
 	margin: 0 30px;
+}
+.col-xs-0{
+	display: none;
 }

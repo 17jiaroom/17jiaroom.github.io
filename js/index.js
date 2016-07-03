@@ -30,9 +30,9 @@ $(function(){
   //section部分阅读全文效果
   var $article_h3=$(".article h3");
   $article_h3.hover(function(){
-    $(this).animate({right:"20px"});
+    $(this).animate({right:"30px"});
   },function(){
-    $(this).animate({right:"0px"});
+    $(this).animate({right:"10px"});
   });
 
 
