@@ -10,9 +10,9 @@ $(function(){
 			(imglist.eq(0)).siblings().hide();  //隐藏除了第一张之外的图片
 			infobox.find("p").text(imglist.find("img").eq(0).attr("title"));  //设置图片信息
 			numlist.click(function(){			//给序列按钮绑定点击事件
-				var i=$(this).text()-1;   		// 获取当前序列
+				var i=$(this).index();   		// 获取当前序列
 				index=i;						//将当前点击的序列传给全局序列index
-				imglist.eq(i).fadeIn(1000).siblings().fadeOut(1000);    //将序列按钮对应的图片淡入显示出来，其余的淡出
+				imglist.eq(i).fadeIn(1000).siblings().fadeOut(500);    //将序列按钮对应的图片淡入显示出来，其余的淡出
 				infobox.find("p").text(imglist.find("img").eq(i).attr("title")); //更新图片信息
 				numlist.eq(i).addClass("on").siblings().removeClass("on");       //当前序列按钮背景色改变,并将其他按钮复原
 			});

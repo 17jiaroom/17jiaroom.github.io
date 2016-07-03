@@ -1,7 +1,8 @@
 .slidebox{height: 300px;position: relative; border-radius:3%; overflow: hidden;padding: 0;}
-.numbox{list-style: none;position: absolute;z-index: 20;bottom: 5px; right: 20px; margin: 0; padding: 0}
-.numbox li{display: inline-block; border-radius: 50%; width: 20px; height: 20px; color: #fff; background-color: black; text-align: center;line-height: 20px; cursor: pointer;}
+.numbox{list-style: none;position: absolute;z-index: 20;bottom: 3px; right: 20px; margin: 0; padding: 0}
+.numbox li{display: inline-block; border-radius: 50%; width: 15px; height: 15px; color: #fff; background-color: black; text-align: center;line-height: 20px; cursor: pointer;}
+.numbox li:hover{background-color: #900; opacity: 0.8}
 .numbox .on{background-color: #900}
-img{width: 100%; height: 300px;position: absolute;}
+.slidebox img{width: 100%; height: 300px;position:absolute;}
 .infobox{width: 100%;height: 30px; background-color: #000; position: absolute; bottom: 0px; z-index:10;line-height: 30px;opacity: 0.3; color: #fff;}
 .infobox p{position: absolute;color: #fff; line-height: 30px; margin: 0; padding: 0;left: 20px}
