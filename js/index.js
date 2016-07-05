@@ -38,9 +38,9 @@ $(function(){
   //section部分阅读全文效果
   var $article_h3=$(".article h3");
   $article_h3.hover(function(){
-    $(this).animate({right:"30px"});
+    $(this).animate({right:"+=30px"});
   },function(){
-    $(this).animate({right:"10px"});
+    $(this).animate({right:"-=30px"});
   });
 // 遮罩层
 var mask=$("#mask");
@@ -101,6 +101,28 @@ $cloud.on("mouseover","span",function(){
 $cloud.on("mouseout","span",function(){
 	$(this).animate({left:"-=30px"});
 });
+
+//主页面section图片效果
+$(".article>a").hover(function(){
+	$(this).find("img").animate({width:"110%",height:"110%"});
+},function(){
+	$(this).find("img").animate({width:"100%",height:"100%"});
+});
+
+//侧导航跳转
+var $asidenav_top=$("#asidenav_top");
+var $asidenav_bottom=$("#asidenav_bottom");
+$asidenav_top.on("click",function(){
+	$('body').animate({scrollTop:0}, 1000);
+	return false;
+});
+$asidenav_bottom.on("click",function(){
+	var t=$(document).height();
+	$('body').animate({scrollTop:t}, 1000);
+	return false;
+});
+
+
 
 
 

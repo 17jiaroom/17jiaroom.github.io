@@ -5,11 +5,12 @@
 	background-image:url(../img/SAO.jpg);
 	background-size: cover;
 	overflow: hidden;
-	background-position: 20% 50%;
+	background-position: 50% 50%;
 }
 a{
 	text-decoration: none;
 }
+
 a:hover{
 	text-decoration: none;
 }
@@ -50,9 +51,7 @@ a:hover{
 }
 .mynav>ul a{
 	color: black;
-}
-.mynav ul li:hover .nav2{
-	display: block;
+	width: 70px;
 }
 .nav2{
 	display: none;
@@ -286,11 +285,58 @@ a:hover{
 	position: absolute;
 	top: 50px;
 	right: 0;
-	height: 400px;
-
+	height: 300px;
 }
 .cloud_h1{
-	text-align: center;
 	position: relative;
-	bottom: -30px;
+	top: 50px;
+	left: 120px;
+}
+
+.asidenav{
+	position: fixed;
+	top: 40%;
+	right: 20px;
+	width: 40px;
+}
+.asidenav a{
+	position: relative;
+	margin: 0.5px 0;
+	padding: 0;
+	background-color: rgba(243, 243, 243, 1);
+	width: 40px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+	line-height: 30px;
+	color: rgb(122,122,122);
+}
+.asidenav a:hover{
+	background-color: rgba(48,113,169,1);
+	color: #fff;
+}
+#asidenav_top{
+	height: 40px;
+	line-height: 50px;
+	background-color: rgba(48,113,169,0.5);
+	color: #fff;
+}
+#asidenav_bottom{
+	height: 40px;
+	line-height: 50px;
+	background-color: rgba(48,113,169,0.5);
+	color: #fff;
+}
+#asidenav_top:hover{
+	background-color: rgba(48,113,169,1);
+	color: #fff;
+}
+#asidenav_bottom:hover{
+	background-color: rgba(48,113,169,1);
+	color: #fff;
+}
+.asidenav span{
+	position: relative;
+	top: 12px;
+	font-size: 18px;
 }
