@@ -34,10 +34,56 @@ $(function(){
   },function(){
     $(this).animate({right:"10px"});
   });
+// 遮罩层
+var mask=$("#mask");
+function showmask(i){
+	mask.css({width:$(document).width()+"px",height:$(document).height()+"px"});
+	mask.fadeIn(1000);
+	$(document).on("mousewheel DOMMouseScroll",function(event){
+		event.preventDefault();
+	});
+	mask.click(function(){    //遮罩层点击后消失
+		mask.fadeOut(1000);
+		i.fadeOut(1000);
+		$(document).off("mousewheel DOMMouseScroll");
+	});
+}
+// 遮罩层注册
+var $registerbox=$(".registerbox");
+$("#register").click(function(){
+	showmask($registerbox);
+	$registerbox.css({"z-index":"110"});
+	$registerbox.fadeIn(1000);
+});
+// 遮罩层登录
+var $loginbox=$(".loginbox");
+$("#login").click(function(){
+	showmask($loginbox);
+	$loginbox.css({"z-index":"110"});
+	$loginbox.fadeIn(1000);
+});
 
-
-
-
+//动态cloud
+var word_cloud = [
+          {text: "一入基三深似海", weight:5},
+          {text: "minecraft", weight: 4},
+          {text: "jazz", weight: 3},
+          {text: "ACG", weight: 2},
+          {text: "哔哩哔哩", weight: 3},
+					{text: "薛之谦", weight: 4},
+					{text: "林俊杰", weight: 5},
+					{text: "周杰伦", weight: 6},
+					{text: "华语乐坛", weight: 5},
+					{text: "七月新番", weight: 4},
+					{text: "胖丁", weight: 3},
+					{text: "轻音乐", weight: 2},
+					{text: "刀剑神域", weight: 3},
+					{text: "葛炮", weight: 4},
+					{text: "鬼畜达人", weight: 5},
+					{text: "浩气长存", weight: 6},
+          // ...as many words as you want
+      ];
+$(".cloud").jQCloud(word_cloud);
 
 
 
@@ -45,4 +91,3 @@ $(function(){
 
 
 });
-
