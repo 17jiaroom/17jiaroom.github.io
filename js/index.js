@@ -2,9 +2,10 @@ $(function(){
 	//百度跳转
 	$(".baidubtn").click(function(){
 		var txt=$("#search").val();
-		window.open("https://www.baidu.com/s?wd="+txt);
+		window.location.href="https://www.baidu.com/s?wd="+txt;
 		$("#search").val("");
 	});
+
  	//banner效果
  	$(".banner").hover(function(){
  		$(".banner_box").fadeIn(200);
@@ -12,12 +13,19 @@ $(function(){
  		$(".banner_box").fadeOut(200);
  	})
   	//搜索框焦点效果
-  		$("#search").focus(function(){
-  			$("#search").css({"background-color":"#fff"});
+ 			var $search=$("#search");
+			$search.focus(function(){
+  			$search.css({"background-color":"#fff"});
   		});
-  		$("#search").blur(function(){
-  			$("#search").css({"background-color":"rgba(255,255,255,0.8)"});
+  		$search.blur(function(){
+  			$search.css({"background-color":"rgba(255,255,255,0.8)"});
   		});
+			//搜索框回车事件
+			$search.keydown(function(event){
+				if(event.keyCode==13)
+				{$(".baidubtn").trigger("click")};
+			});
+
 
  	//轮播右边图片信息展示效果
 	$(".maininfo_imgbox").hover(function(){
@@ -63,7 +71,7 @@ $("#login").click(function(){
 	$loginbox.fadeIn(1000);
 });
 
-//动态cloud
+//标签cloud
 var word_cloud = [
           {text: "一入基三深似海", weight:5},
           {text: "minecraft", weight: 4},
@@ -85,8 +93,14 @@ var word_cloud = [
       ];
 $(".cloud").jQCloud(word_cloud);
 
-
-
+//标签cloud hover效果
+var $cloud=$(".cloud");
+$cloud.on("mouseover","span",function(){
+	$(this).animate({left:"+=30px"});
+});
+$cloud.on("mouseout","span",function(){
+	$(this).animate({left:"-=30px"});
+});
 
 
 
