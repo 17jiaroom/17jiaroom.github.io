@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>music</title>
+	<style>
+		.musicbox{position:absolute;width:600px; height:500px;border-radius: 10px;overflow:hidden;box-shadow: 0px 0px 50px #5C5252; top: 50%; left: 50%;margin-left: -300px; margin-top: -250px; color:#585858;}
+ 		.cover{width:100%;height:100%;position: absolute;opacity:1;filter:blur(2px);}
+ 		.shadowtop{position:absolute;width: 100%;height:30%;background-color: #151111;z-index: 10;opacity: 0.8}
+ 		.shadowbottom{position:absolute;width: 100%;height: 70%; background-color: #C85F5F;z-index: 10;bottom: 0;opacity: 0.6}
+ 		.music_title{font-size: 36px; color: #585858; text-align: center;cursor: pointer;margin:30px auto 0 auto;width: 400px}
+ 		.author{font-size: 16px;color: #585858; text-align: center;cursor: pointer;}
+ 		.shadowtop span{font-size: 24px;cursor: pointer;}
+ 		.shadowtop_1{position: absolute;top: 40px; left: 40px;}
+ 		.shadowtop_2{position: absolute;bottom: 30px; left: 40px;}
+ 		.shadowtop_3{position: absolute;top: 40px; right: 40px;}
+ 		.shadowtop_4{position: absolute;bottom: 30px; right: 40px;}
+ 		.music_time{font-size: 64px; text-align: center; color:#585858;}
+		.shadowbottom span{ font-size: 48px;cursor: pointer;}
+		.shadowbottom_1{position: absolute;top: 150px;left: 100px}
+		.shadowbottom_2{position: absolute;top: 150px; left: 275px;}
+		.shadowbottom_3{position: absolute;top: 150px;right: 100px}
+		#myaudio{display: none;}
+		.progressbar{position: absolute;top:145px;width:100%; height: 10px; background-color:#463232;}
+	</style>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="musicbox">
+	<div class="shadowtop">
+		<p class="music_title">Hidden</p>
+		<p class="author">player by 17Jia</p>
+		<div class="shadowtop_1"><span class="glyphicon glyphicon-random"></span></div>
+		<div class="shadowtop_2"><span class="glyphicon glyphicon-heart "></span></div>
+		<div class="shadowtop_3"><span class="glyphicon glyphicon-repeat"></span></div>
+		<div class="shadowtop_4"><span class="glyphicon glyphicon-share-alt"></span></div>
+	</div>
+	<div class="shadowbottom">
+		<p class="music_time">00:00</p>
+		<div class="shadowbottom_1"><span class="glyphicon glyphicon-backward"></span></div>
+		<div class="shadowbottom_2"><span class="glyphicon glyphicon-pause"></span></div>
+		<div class="shadowbottom_3"><span class="glyphicon glyphicon-forward"></span></div>
+	</div>
+	<img src="2.jpg" class="cover">	
+	<div class="progressbar"></div>
+</div>
+<audio src="syyzz.mp3" controls="control" title="iw ix - 碎月雨中奏" id="myaudio" autoplay="autoplay">
+
+</audio>
+
+
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		var $shadowtop_icon=$(".shadowtop div");
+		var state_top=false;
+		$shadowtop_icon.on('click', function(event) { 
+			if(state_top)
+				{
+					$(this).css('color', '#585858');
+					state_top=false;
+				}
+			else
+				{
+					$(this).css('color', '#DD3232');
+					state_top=true;
+				}
+		});
+		var $shadowbottom_icon=$(".shadowbottom div");
+		$shadowbottom_icon.on('mousedown', function(event) {
+			$(this).css('color', 'black');
+		});
+		$shadowbottom_icon.on('mouseup', function(event) {
+			$(this).css('color', '#585858');
+		});
+		var $shadowbottom_2_icon=$(".shadowbottom_2").find("span");   // 音乐播放-暂停按钮
+		$shadowbottom_2_icon.on('click', function(event) {
+			if($(this).hasClass('glyphicon-play'))
+			{
+				$(this).removeClass('glyphicon-play');
+				$(this).addClass('glyphicon-pause');
+				musicplay();
+
+			}
+			else
+			{
+				$(this).removeClass('glyphicon-pause');
+				$(this).addClass('glyphicon-play');
+				musicpause();
+			}
+		});
+		//--播放器--
+		var myaudio= $("#myaudio")[0];
+		var music_title=$(".music_title");
+		music_title.text(myaudio.title);
+		//播放函数
+		function musicplay(){
+			myaudio.play();
+		}
+		//暂停函数
+		function musicpause(){
+			myaudio.pause();
+		}
+		//播放时间
+		var music_time =$(".music_time");
+		setInterval(function(){
+			var time=parseInt(myaudio.currentTime);
+			var t_h=parseInt(time/60);
+			var t_s=time%60;
+			time=parseInt(time)+1;
+			if(t_s<10)
+			{
+				music_time.text('0'+t_h+':'+'0'+t_s);
+			}
+			else if(10<=t_s<60)
+			{
+				music_time.text('0'+t_h+':'+t_s);
+			}
+		},100);
+
+
+
+
+
+
+
+
+
+
+
+	})
+</script>
+</body>
+</html>

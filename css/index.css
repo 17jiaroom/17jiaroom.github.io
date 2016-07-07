@@ -47,22 +47,14 @@ a:hover{
 .mynav>ul{
 	width: 50%;
 	margin-left: 10%;
-	border-bottom: 0px;
+	border-bottom: 10px;
 }
 .mynav>ul a{
 	color: black;
 	width: 70px;
 }
-.nav2{
-	display: none;
-	width: 70px;
-	position: absolute;
-	top: 42px;
-	list-style: none;
-	padding: 0;
-	text-align: center;
-	color: red
-}
+
+
 .imagebox>a{
 	display: block;
 }
